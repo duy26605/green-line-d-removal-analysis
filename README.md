@@ -1,61 +1,82 @@
-\section{Project Overview}
+\documentclass[11pt]{article}
 
-This project evaluates the impacts of removing the \textbf{MBTA Green Line D Branch} on travel behavior and roadway network performance in the Boston metropolitan area. The analysis focuses on how transit service removal affects \textbf{mode choice, traffic demand allocation, and congestion patterns} within a dense urban transportation network.
+\usepackage[margin=1in]{geometry}
+\usepackage{hyperref}
+\usepackage{enumitem}
+\usepackage{parskip}
+\usepackage{titlesec}
 
-The study was completed as part of \textbf{CIVE 7381 -- Transportation Demand Models} at Northeastern University.
+% Reduce spacing around section headers
+\titleformat{\section}{\large\bfseries}{}{0em}{}
+\titleformat{\subsection}{\normalsize\bfseries}{}{0em}{}
 
-\section{Study Objectives}
+\setlist[itemize]{leftmargin=1.2em}
+\setlist[enumerate]{leftmargin=1.5em}
 
-The primary objectives of this project are to:
+\begin{document}
+
+\begin{center}
+    {\Large \textbf{Green Line D Branch Removal Analysis}}\\[6pt]
+    \small Transportation Demand Modeling \& Network Performance Evaluation
+\end{center}
+
+\vspace{1em}
+
+\section*{Overview}
+This repository evaluates the impacts of removing the \textbf{MBTA Green Line D Branch} on
+travel behavior and roadway network performance in the Boston metropolitan area. The
+analysis focuses on changes in \textbf{mode choice, traffic demand allocation, and congestion}
+using a four-step travel demand modeling framework.
+
+\vspace{0.5em}
+
+\section*{Study Objectives}
 \begin{itemize}
-    \item Evaluate changes in traffic volumes, congestion, and travel times resulting from removal of the Green Line D Branch;
-    \item Examine reallocation of \textbf{home-based work (HBW)} trips between auto and transit modes;
-    \item Compare base case conditions with a no--D branch scenario;
-    \item Provide insights into transit system resilience and transportation planning implications.
+    \item Assess changes in traffic volumes, congestion, and travel times
+    \item Examine reallocation of home-based work (HBW) trips between auto and transit
+    \item Compare base case and no--D branch scenarios
+    \item Provide insights into transit system resilience and planning
 \end{itemize}
 
-\section{Methodology}
-
-A four-step travel demand modeling framework was applied using \textbf{TransCAD}, consisting of the following components:
-
+\section*{Methodology}
 \begin{enumerate}
-    \item \textbf{Trip Generation and Distribution}: Fixed HBW origin--destination (OD) matrices were held constant across scenarios.
-    \item \textbf{Mode Choice Modeling}: A nested logit model was used to allocate trips between auto and transit based on generalized travel cost, including travel time, monetary cost, parking cost, and income.
-    \item \textbf{Traffic Assignment}: Auto trips were assigned using a user-equilibrium (UE) approach with congestion represented through volume--delay functions.
-    \item \textbf{Scenario Analysis}: Results from a base case network were compared with an alternative scenario in which the Green Line D Branch was removed from the transit network.
+    \item \textbf{Trip Generation \& Distribution} \\
+    Fixed HBW OD matrices held constant across scenarios
+    \item \textbf{Mode Choice} \\
+    Nested logit model based on generalized travel cost
+    \item \textbf{Traffic Assignment} \\
+    User-equilibrium auto assignment with congestion effects
+    \item \textbf{Scenario Analysis} \\
+    Base case vs.\ network without the Green Line D Branch
 \end{enumerate}
 
-This modeling approach isolates the effects of transit network modification on demand allocation and roadway performance.
-
-\section{Key Findings}
-
-Key findings from the analysis include:
+\section*{Key Findings}
 \begin{itemize}
-    \item Removal of the Green Line D Branch results in \textbf{modest increases in vehicular congestion}, vehicle miles traveled (VMT), and vehicle hours traveled (VHT);
-    \item Congestion impacts are \textbf{spatially concentrated} along corridors parallel to the former D Branch;
-    \item Mode choice results show a redistribution of HBW trips driven by relative changes in generalized travel cost;
-    \item Increased auto congestion reduces the attractiveness of driving, leading to non-intuitive mode choice responses.
+    \item Modest increases in vehicular congestion, VMT, and VHT
+    \item Congestion impacts concentrated along parallel corridors
+    \item Mode choice shifts driven by relative generalized travel cost
+    \item Increased auto congestion reduces driving attractiveness
 \end{itemize}
 
-\section{Data Sources}
-
-The analysis integrates multiple regional transportation datasets, including:
+\section*{Data Sources}
 \begin{itemize}
-    \item MBTA General Transit Feed Specification (GTFS) data for transit service attributes;
-    \item Boston Metropolitan Planning Organization (MPO) roadway network and zonal data;
-    \item Transportation Analysis Zones (TAZs) for regional travel demand representation.
+    \item MBTA General Transit Feed Specification (GTFS)
+    \item Boston Metropolitan Planning Organization (MPO) network data
+    \item Transportation Analysis Zones (TAZs)
 \end{itemize}
 
-\section{Academic Context}
-
+\section*{Academic Context}
 \begin{itemize}
     \item \textbf{Course}: CIVE 7381 -- Transportation Demand Models
     \item \textbf{Institution}: Northeastern University
-    \item \textbf{Instructor}: Prof. Haris Koutsopoulos
+    \item \textbf{Instructor}: Prof.\ Haris Koutsopoulos
     \item \textbf{Authors}: Duy Nguyen, Vishnu Sreekumar
     \item \textbf{Date}: December 2025
 \end{itemize}
 
-\section{Notes}
+\section*{Notes}
+This project analyzes redistribution of existing travel demand rather than induced demand.
+Results represent relative behavioral and network performance responses rather than
+absolute ridership forecasts.
 
-This project focuses on redistribution of existing travel demand rather than induced or suppressed demand. Results should be interpreted as relative behavioral and network performance responses rather than absolute ridership forecasts.
+\end{document}
